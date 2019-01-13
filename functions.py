@@ -59,6 +59,24 @@ print(get_fullname("Ada", "Lovelace") == "Ada Lovelace")
 
 
 
+def greeting(hometown, first_name, last_name):
+
+   fullname = get_fullname(first_name, last_name)
+   
+   if is_hometown(hometown):
+      print("Hi, {}, we're from the same place!".format(fullname))
+   else: 
+      print("Hi {}, I'd like to visit {}!".format(fullname, hometown))
+
+
+print("----greeting test-----")
+
+print(greeting("Canovanas", "Sol", "Beniquez")) 
+print(greeting("London", "Ada", "Lovelace"))
+
+
+ 
+
 ###############################################################################
 
 
