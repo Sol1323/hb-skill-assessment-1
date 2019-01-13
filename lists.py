@@ -159,6 +159,17 @@ def every_other_item(items):
        ['you', 'are', 'good', 'at', 'code']
     """
 
+    every_other_item = items[::2]
+    
+    return every_other_item
+
+
+print("----Every other item test-----")
+
+print(every_other_item(['a', 'b', 'c', 'd', 'e', 'f']) == ['a', 'c', 'e'])
+print(every_other_item(["pickle", "pickle", "juice", "pickle", "juice", "pop"]) ==  ['pickle', 'juice', 'juice'])
+print(every_other_item(["you", "z", "are", "z", "good", "z", "at", "x", "code"]) ==  ['you', 'are', 'good', 'at', 'code'])
+
 
 def smallest_n_items(items, n):
     """Return the `n` smallest integers in list, in descending order.
