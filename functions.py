@@ -6,6 +6,31 @@ go below this docstring.
 
 """
 
+
+def is_hometown(town, hometown = "Canovanas"):
+   """Given a string, return bool if it matches your hometown.
+
+
+   Examples:
+    
+    If you got this strings as input: "Aibonito"
+    You should return: False
+    
+    
+    Another example input: "San Juan"
+    Return value should be: True
+
+   """
+
+   return town == hometown
+
+
+print("----is_hometown test-----")
+
+print(is_hometown("Aibonito") == False)
+print(is_hometown("Canovanas") == True)
+
+
 ###############################################################################
 
 
