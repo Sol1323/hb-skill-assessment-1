@@ -36,8 +36,10 @@ def get_indexed_items(items):
     return indexed_items
 
 
-print(get_indexed_items(["Toyota", "Jeep", "Volvo"]))
-print(get_indexed_items(["Toyota", "Jeep", "Toyota", "Volvo"]))
+print("----Get indexed items test-----")
+
+print(get_indexed_items(["Toyota", "Jeep", "Volvo"]) == [("Toyota", 0), ("Jeep", 1), ("Volvo", 2)])
+print(get_indexed_items(["Toyota", "Jeep", "Toyota", "Volvo"]) == [("Toyota", 0), ("Jeep", 1), ("Toyota", 2), ("Volvo", 3)])
 
 
 
@@ -91,6 +93,38 @@ def words_in_common(words1, words2):
         ['Python']
 
     """
+
+    words_in_common = []
+    words1_set = set(words1)
+    words2_set = set(words2)
+
+
+    if len(words1_set) > len(words2_set): 
+        for word1 in words1_set: 
+            if word1 in words2_set:
+                words_in_common.append(word1)
+
+    elif len(words1_set) <= len(words2_set): 
+        for word2 in words2_set: 
+            if word2 in words1_set:
+                words_in_common.append(word2)
+
+    return sorted(words_in_common)
+
+
+print("----Words in common test-----")
+
+print(words_in_common(["Python", "Ruby", "R", "C++", "Haskell"],
+        ["Lizard", "Turtle", "Python"]) == ['Python'])
+
+print(words_in_common(["Python", "Ruby", "R", "C++", "Haskell"], 
+      ["Lizard", "Turtle", "Python", "Python"]) == ['Python'])
+
+print(words_in_common(["lamb", "chili", "cheese"],
+        ["cake", "ice cream"]) == [])
+
+print(words_in_common(["cheese", "bagel", "cake", "cheese"],
+        ["hummus", "cheese", "beets", "kale", "bagel", "cake"]) == ['bagel', 'cake', 'cheese'])
 
 
 def every_other_item(items):
