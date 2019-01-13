@@ -31,6 +31,34 @@ print(is_hometown("Aibonito") == False)
 print(is_hometown("Canovanas") == True)
 
 
+
+def get_fullname(first_name, last_name):
+   """Given a first and last name, return one string for fullname
+
+
+   Examples:
+    
+    If you got this strings as input: "Sol", "Beniquez"
+    You should return: "Sol Beniquez"
+    
+    
+    Another example input: "Ada", "Lovelace"
+    Return value should be: "Ada Lovelace"
+
+   """
+   
+   fullname = first_name + " " + last_name
+   
+   return fullname
+
+
+print("----get_fullname test-----")
+
+print(get_fullname("Sol", "Beniquez") == "Sol Beniquez")
+print(get_fullname("Ada", "Lovelace") == "Ada Lovelace")
+
+
+
 ###############################################################################
 
 
