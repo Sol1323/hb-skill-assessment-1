@@ -27,6 +27,19 @@ def get_indexed_items(items):
 
     """
 
+    indexed_items = []
+    idx = 0
+
+    for item in items: 
+        indexed_items += [(item, idx)]
+        idx+=1
+    return indexed_items
+
+
+print(get_indexed_items(["Toyota", "Jeep", "Volvo"]))
+print(get_indexed_items(["Toyota", "Jeep", "Toyota", "Volvo"]))
+
+
 
 def words_in_common(words1, words2):
     """Find words in common.
