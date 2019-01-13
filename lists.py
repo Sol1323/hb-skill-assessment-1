@@ -205,6 +205,21 @@ def smallest_n_items(items, n):
 
     """
 
+    ordered_list = sorted(items)
+    smallest_n_items = []
+
+    if n != 0:
+        smallest_n_items = ordered_list[n-1::-1]
+
+    return smallest_n_items
+
+
+print("----Samellest n item test-----")
+
+print(smallest_n_items([2, 6006, 700, 42, 6, 59], 3) ==  [42, 6, 2])
+print(smallest_n_items([3, 4, 5], 0) ==  [])
+print(smallest_n_items([3, 1, 3, 2, 1, 1], 2) ==  [1, 1])
+
 
 def get_unique_characters(word):
 	"""Given a string, return a sorted LIST of the unique letters.
