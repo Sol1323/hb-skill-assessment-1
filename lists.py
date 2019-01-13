@@ -222,19 +222,28 @@ print(smallest_n_items([3, 1, 3, 2, 1, 1], 2) ==  [1, 1])
 
 
 def get_unique_characters(word):
-	"""Given a string, return a sorted LIST of the unique letters.
+    """Given a string, return a sorted LIST of the unique letters.
 
-	For example, if you got the string "olives" as the argument, 
-	you should return the list ['e', 'i', 'l', 'o', 's', 'v']
+    For example, if you got the string "olives" as the argument, 
+    you should return the list ['e', 'i', 'l', 'o', 's', 'v']
 
-	If you got the string "tissue" as the argument, you should return
-	the list ['e', 'i', 's', 't', 'u']
+    If you got the string "tissue" as the argument, you should return
+    the list ['e', 'i', 's', 't', 'u']
 
-	"""
+    """
 
+    unique_characters = []
 
+    for char in word: 
+        if char not in unique_characters:
+            unique_characters.append(char)
 
+    return sorted(unique_characters)
+    
 
+print("----Get unique characters test-----")
 
+print(get_unique_characters("olives") == ['e', 'i', 'l', 'o', 's', 'v'])
+print(get_unique_characters("tissue") == ['e', 'i', 's', 't', 'u'])
 
 
