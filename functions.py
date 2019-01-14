@@ -123,6 +123,41 @@ print(is_berry("BlackBerry") == True)
 
 
 
+def shipping_cost(fruit):
+   """Given 1 string, return shipping cost for fruit.
+   
+
+   Examples:
+    
+    If you got this string as input: "strawberry"
+    You should return: 0
+    
+    If the input varies in upper & lower cases 
+    (not case sensitive): "sTraWberry"
+    You should return: 0
+    
+    Another example input: "apple"
+    Return value should be: 5
+
+   """
+
+   shipping_cost = 5
+
+   if is_berry(fruit):
+      shipping_cost = 0
+
+   return shipping_cost
+
+
+print("----shipping_cost test-----")
+
+print(shipping_cost("strawberry") == 0)
+print(shipping_cost("sTraWberry") == 0) 
+print(shipping_cost("apple") == 5)
+print(shipping_cost("BlackBerry") == 0)
+
+
+
 ###############################################################################
 
 
