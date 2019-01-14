@@ -157,6 +157,42 @@ print(shipping_cost("apple") == 5)
 print(shipping_cost("BlackBerry") == 0)
 
 
+def get_all_fruits(fruit, fruits):
+   """Given 1 string and a list return a new list
+   with the fruit added to the end 
+   
+   Returned list should be all lowercase. Assume given list is lowercase.
+
+
+   Examples:
+    
+    If you got this string and list as input: "strawberry", 
+    ['apple', 'banana', 'orange']
+    You should return: ['apple', 'banana', 'orange', 'strawberry']
+    
+    If the input varies in upper & lower cases: "sTraWberry",
+    ['apple', 'banana', 'orange']
+    You should return: ['apple', 'banana', 'orange', 'strawberry']
+    
+    If the input is already on the list: "apple",
+    ['apple', 'banana', 'orange']
+    Return value should be: ['apple', 'banana', 'orange', 'apple']
+
+   """
+
+   fruit = fruit.lower()
+   fruits.append(fruit)
+   all_fruits = fruits[::]
+
+   return all_fruits
+   
+
+print("----get_all_fruits test-----")
+
+print(get_all_fruits("strawberry", ['apple', 'banana', 'orange']) == ['apple', 'banana', 'orange', 'strawberry'])
+print(get_all_fruits("sTraWberry", ['apple', 'banana', 'orange']) == ['apple', 'banana', 'orange', 'strawberry']) 
+print(get_all_fruits("apple", ['apple', 'banana', 'orange']) == ['apple', 'banana', 'orange', 'apple'])
+
 
 ###############################################################################
 
