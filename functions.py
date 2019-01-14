@@ -185,13 +185,65 @@ def get_all_fruits(fruit, fruits):
    all_fruits = fruits[::]
 
    return all_fruits
-   
+
 
 print("----get_all_fruits test-----")
 
 print(get_all_fruits("strawberry", ['apple', 'banana', 'orange']) == ['apple', 'banana', 'orange', 'strawberry'])
 print(get_all_fruits("sTraWberry", ['apple', 'banana', 'orange']) == ['apple', 'banana', 'orange', 'strawberry']) 
 print(get_all_fruits("apple", ['apple', 'banana', 'orange']) == ['apple', 'banana', 'orange', 'apple'])
+
+
+
+def calculate_price(base_price, state, tax = .05):
+   """Given 2 integers and a string. 
+   Return a string total cost with fees and tax included.
+
+   Arguments format example: 
+      base_price = 5.25 (limit to two digit-decimal)
+      state = CA (limit to two letter uppercase)
+      tax = .05 (limit to two digit-decimal) 
+
+
+   Examples:
+    
+    If you got this integers and string as input: 
+    10.25, 'CA', 0.07
+    You should return: "$11.30"
+
+    If you got this integers and string as input: 
+    50.75, 'MA', .06
+    You should return: "$54.80"
+
+    If you got this integers and string as input: 
+    99.99, 'PA', .06
+    You should return: "$107.99"
+
+    If there is no tax argument default should be %5: 
+    100.00, 'NY'
+    You should return: "$105.00"
+
+   """  
+
+   total_cost = base_price * (tax + 1)
+
+   if state == "CA":
+      total_cost *= 1.03
+   elif state == "PA":
+      total_cost += 2.00
+   elif state == "MA" and base_price <= 100:
+      total_cost += 1.00 
+   
+   return "${:.2f}".format(total_cost)
+
+
+print("----calculate_price-----")
+
+print(calculate_price(10.25, 'CA', .07) == "$11.30")
+print(calculate_price(50.75, 'MA', .06) == "$54.80") 
+print(calculate_price(101.25, 'MA', .06) == "$107.33")
+print(calculate_price(99.99, 'PA', .06) == "$107.99") 
+print(calculate_price(100.00, 'NY') == "$105.00")
 
 
 ###############################################################################
