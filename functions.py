@@ -8,16 +8,16 @@ go below this docstring.
 
 
 def is_hometown(town, hometown = "Canovanas"):
-   """Given a string, return bool if it matches your hometown.
+   """Given a string, return a bool if it matches hometown.
 
 
    Examples:
     
-    If you got this strings as input: "Aibonito"
+    If you got this string as input: "Aibonito"
     You should return: False
     
     
-    Another example input: "San Juan"
+    Another example input: "Canovanas"
     Return value should be: True
 
    """
@@ -60,6 +60,19 @@ print(get_fullname("Ada", "Lovelace") == "Ada Lovelace")
 
 
 def greeting(hometown, first_name, last_name):
+   """Given 3 strings, return a greeting depending on the hometown
+
+
+   Examples:
+    
+    If you got this strings as input: "Canovanas", "Sol", "Beniquez"
+    You should return: "Hi, Sol Beniquez, we're from the same place!"
+    
+    
+    Another example input: "London", "Ada", "Lovelace"
+    Return value should be: "Hi Ada Lovelace, I'd like to visit London!"
+
+   """
 
    fullname = get_fullname(first_name, last_name)
    
@@ -75,7 +88,40 @@ print(greeting("Canovanas", "Sol", "Beniquez"))
 print(greeting("London", "Ada", "Lovelace"))
 
 
- 
+
+def is_berry(fruit):
+   """Given 1 string, return a bool if it is a berry.
+
+
+   Examples:
+    
+    If you got this string as input: "strawberry"
+    You should return: True
+    
+    If the input varies in upper & lower cases 
+    (not case sensitive): "sTraWberry"
+    You should return: True
+    
+    Another example input: "apple"
+    Return value should be: False
+
+   """
+
+   berries = ["strawberry", "raspberry", "blackberry", "currant"]
+
+   fruit = fruit.lower()
+
+   return fruit in berries
+
+
+print("----is_berry test-----")
+
+print(is_berry("strawberry") == True)
+print(is_berry("sTraWberry") == True) 
+print(is_berry("apple") == False)
+print(is_berry("BlackBerry") == True)
+
+
 
 ###############################################################################
 
